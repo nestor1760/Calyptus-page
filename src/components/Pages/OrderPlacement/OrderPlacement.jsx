@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './OrderPlacement.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCorrectPromo, setPromo } from '../../../store/purchaseReducer/purchaseReducer';
 import { promoData } from '../PurchasePage/promocodeData';
@@ -10,11 +10,12 @@ import { clearCart } from '../../../store/cartReducer/cartReducer';
 import { countryData } from '../../../FetchData/countryDataRest/countryData';
 import { countryUrl, deliveryMethod, paymentMethod } from './dataForInformationPart';
 import { setCity, setCountryName, setDeliveryMethodName, setEmail, setLastName, setName, setPaymentMethodName, setPhoneNumber, setPostOfficeNumber, setRegion } from '../../../store/checkOutReducer/checkOutReducer';
+import { useWindowWidth } from '../../../hooks/useWindowWidth';
+import HeaderPageNavigation from '../../HeaderPageNavigation/HeaderPageNavigation';
 
 
 const OrderPlacement = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   
   const {cart} = useSelector(state => state.cart)
   const {tax, promo, correctPromo} = useSelector(state => state.purchase)
@@ -28,20 +29,8 @@ const OrderPlacement = () => {
   const [emailCorrect, setEmailCorrect] = useState(false)
 
   //state for width screen
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
-
+  const windowWidth = useWindowWidth();
+  
   const blurHandler = (e) => {
     if(e.target.name === 'email') {
       setEmailDirty(true)
@@ -119,26 +108,25 @@ const OrderPlacement = () => {
     return grandTotalPrice.toFixed(2)
   }
 
+  const links = (windowWidth < 1110) 
+                          ? [
+                            {id: 1, name: 'Home', path: '/'},
+                            {id: 2, name: 'purchase', path: '/purchase'},
+                            ]
+                          : [
+                              {id: 1, name: 'Home', path: '/'},
+                              {id: 2, name: 'catalog categories', path: '/catalog_categories'},
+                              {id: 3, name: 'purchase', path: '/purchase'},
+                            ]
+
   return (
     <div className={style.orderPlacementContainer}>
       <div className={style.orderPlacementContent}>
         <div className={style.orderPlacementHeader}>
-            <div className={style.headerNavidation}>
-              <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/')}>home</button>
-              <p style={{margin: '0 5px'}}>/</p>
-              {(window.innerWidth < 1110)
-                ?
-                  null
-                :
-                  <>
-                    <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/catalog_categories')}>catalog categories</button>
-                    <p style={{margin: '0 5px'}}>/</p>
-                  </>
-              }
-              <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/purchase')}>purchase</button>
-              <p style={{margin: '0 5px'}}>/</p>
-              <button style={{color: 'rgba(0, 0, 0, 0.67)', fontWeight: '600'}}>order placement</button>
-            </div>
+          <HeaderPageNavigation 
+            links={links}
+            activeLink='order placement'
+          />
         </div>
         <div className={style.checkOut}>
           <div className={style.formInformation}>
@@ -250,7 +238,7 @@ const OrderPlacement = () => {
                   )}
                 </div>
                 <div className={style.orderReceipt}>
-                  {(window.innerWidth < 1110)
+                  {(windowWidth < 1110)
                     ?
                       <p className={style.cartTotalsTitle}>cart totals :</p>
                     :
@@ -273,7 +261,7 @@ const OrderPlacement = () => {
                     <form onSubmit={handleSubmit}>
                       {correctPromo
                         ?
-                        (window.innerWidth < 1110)
+                        (windowWidth < 1110)
                           ?
                             <p>Promo activated</p>
                           :

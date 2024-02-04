@@ -3,18 +3,20 @@ import style from './ThanksForSubscribe.module.css';
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { setHoverThanksPage } from '../../../store/modalReducer/modalReducer';
+import { useWindowWidth } from '../../../hooks/useWindowWidth';
 
 
 
 const ThanksForSubscribe = () => {
   const dispatch = useDispatch()
+  const windowWidth = useWindowWidth()
 
   return (
       <div className={style.thanksContainer}>
         <div className={style.thanksContent}>
             <img className={style.contentPhoto} src='/media/thanksMedia/thanksPnh1.png' alt='girl_photo_2'/>
           <div className={style.contentBlog}>
-            {(window.innerWidth < 1110)
+            {(windowWidth < 1110)
               ?
               <>
                 <p className={style.blogTitle}>

@@ -1,36 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import style from './CatalogItem.module.css';
 import { BsHeart } from "react-icons/bs";
 import { BsHeartFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToWishList, removeFromWishList } from '../../../../store/wishListReducer/wishListReducer';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 
 const CatalogItem = ({product, index}) => {
   const {image, name, price} = product
   const dispatch = useDispatch()
   const {wishList} = useSelector(state => state.wishList)
+  const windowWidth = useWindowWidth()
 
   const productId = product.id
   const isProductInWishList = wishList.some(item => item.id === productId);
 
-  const styleItemContainer = (window.innerWidth < 1110) ? null : {width: index < 2 || index > 4 ? '404px' : '263px', height: index < 2 || index > 4 ? '569px' : '434px'}
+  const styleItemContainer = (windowWidth < 1110) ? null : {width: index < 2 || index > 4 ? '404px' : '263px', height: index < 2 || index > 4 ? '569px' : '434px'}
 
-  const styleItemImageSize = (window.innerWidth < 1110) ? null : {width: index < 2 || index === 5 || index === 6 ? '404px' : '262px', height: index < 2 || index === 5 || index === 6 ? '497px' : '366px'}
+  const styleItemImageSize = (windowWidth < 1110) ? null : {width: index < 2 || index === 5 || index === 6 ? '404px' : '262px', height: index < 2 || index === 5 || index === 6 ? '497px' : '366px'}
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
 
   return (
     <div style={{position: 'relative'}}>

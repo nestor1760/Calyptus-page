@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import style from './PurchasePage.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import EmptyCart from './EmptyCart/EmptyCart';
 import CartItem from './CartItem/CartItem';
 import RecommendationList from '../../RecommendationList/RecommendationList';
@@ -9,17 +9,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCounts } from '../../../store/counterReducer/counterReducer';
 import { promoData } from './promocodeData';
 import { setCorrectPromo, setPromo } from '../../../store/purchaseReducer/purchaseReducer';
+import { useWindowWidth } from '../../../hooks/useWindowWidth';
+import HeaderPageNavigation from '../../HeaderPageNavigation/HeaderPageNavigation';
 
 const PurchasePage = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   
   const {cart} = useSelector(state => state.cart)
   const {counts} = useSelector(state => state.counter)
   const {tax, promo, correctPromo} = useSelector(state => state.purchase)
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  //window width
+  const windowWidth = useWindowWidth();
 
   //submit for input
   const handleSubmit = (e) => {
@@ -59,31 +60,19 @@ const PurchasePage = () => {
     return grandTotalPrice.toFixed(2)
   }
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
-
   return (
     <>
       <div className={style.purchaseContainer}>
         <div className={style.purchaseContent}>
           <div className={style.purchaseHeader}>
-              <div className={style.headerNavidation}>
-                <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/')}>Home</button>
-                <p style={{margin: '0 5px'}}>/</p>
-                <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/catalog_categories')}>Catalog Categories</button>
-                <p style={{margin: '0 5px'}}>/</p>
-                <button style={{color: 'rgba(0, 0, 0, 0.67)', fontWeight: '600'}}>Purchase</button>
-              </div>
-              {(window.innerWidth < 1110)
+              <HeaderPageNavigation 
+                links={[
+                  {id: 1, name: 'Home', path: '/'},
+                  {id: 2, name: 'Catalog Categories', path: '/catalog_categories'},
+                ]}
+                activeLink='Purchase'
+              />
+              {(windowWidth < 1110)
                 ?
                   <div className={style.titlesRow}>
                     {(cart.length > 0)
@@ -120,13 +109,13 @@ const PurchasePage = () => {
                   )}
                 </div>
                 <div className={style.cartTotalCost}>
-                  {(window.innerWidth < 1110)
+                  {(windowWidth < 1110)
                     ?
                       <p className={style.cartTotalTitle}>cart totals :</p>
                     :
                       null
                   }
-                  <div className={style.totalCostItem} style={{marginBottom: (window.innerWidth < 1110) ? '40px' : '60px'}}>
+                  <div className={style.totalCostItem} style={{marginBottom: (windowWidth < 1110) ? '40px' : '60px'}}>
                     <span>Subtotal</span>
                     <p>{subTotalPrice} PLN</p>
                   </div>
@@ -143,7 +132,7 @@ const PurchasePage = () => {
                     <form onSubmit={handleSubmit}>
                       {correctPromo
                         ?
-                          (window.innerWidth < 1110)
+                          (windowWidth < 1110)
                           ?
                             <p>Promo activated</p>
                           :

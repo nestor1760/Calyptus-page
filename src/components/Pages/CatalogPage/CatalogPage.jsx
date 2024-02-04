@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import style from './Catalog.module.css';
 import { catalogData } from './catalogData';
-import { useNavigate } from 'react-router-dom';
 import CatalogItem from './CatalogItem/CatalogItem';
 import Sort from '../../../UI/Select/Sort';
 import { useProducts } from '../../../hooks/useSort';
@@ -12,9 +11,10 @@ import { catalogDataProducts } from '../../../FetchData/catalogDataRest/catalogD
 import { setShowFilter } from '../../../store/filterReducer/filterReducer';
 import { VscSettings } from "react-icons/vsc";
 import { LuSettings2 } from "react-icons/lu";
+import { useWindowWidth } from '../../../hooks/useWindowWidth';
+import HeaderPageNavigation from '../../HeaderPageNavigation/HeaderPageNavigation';
 
 const CatalogPage = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const {selectedStyles, selectedBrands, selectedColors, selectedMaterials, minPrice, maxPrice} = useSelector(state => state.filter)
@@ -36,19 +36,8 @@ const CatalogPage = () => {
     dispatch(setSelectedSort(sort))
   } 
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
+  //window width
+  const windowWidth = useWindowWidth();
 
   const filterContainerStyles = `${showFilter === null ? style.catalogFilterDefault : (showFilter ? style.catalogFilterOpen : style.catalogFilterClose)}`;
 
@@ -56,18 +45,19 @@ const CatalogPage = () => {
     <div className={style.catalogContainer}>
       <div className={style.catalogContent}>
         <div className={style.catalogHeader}>
-          <div className={style.headerNavidation}>
-            <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/')}>Home</button>
-            <p style={{margin: '0 5px'}}>/</p>
-            <button style={{color: 'rgba(0, 0, 0, 0.67)', fontWeight: '600'}}>Catalog</button>
-          </div>
+          <HeaderPageNavigation 
+            links={[
+              {id: 1, name: 'Home', path: '/'},
+            ]}
+            activeLink='Catalog'
+          />
           <div className={style.headerBlog}>
             <p className={style.blogTitle}>Discover flawless design in every detail</p>
             <p className={style.blogText}>Our new seasonal collection of women's handbags is the perfect companion for any occasion. From work to evening outings, choose practicality and luxury with our exquisite women's handbags, shoulder bags, and clutches. Your style, your choice – discover more on our website!</p>
           </div>
         </div>
         <div className={style.sortContainer}>
-          {(window.innerWidth < 1110)
+          {(windowWidth < 1110)
             ? (showFilter)
                 ? <div className={style.filterIcon} onClick={() => dispatch(setShowFilter(false))}><LuSettings2 /></div>
                 : <div className={style.filterIcon} onClick={() => dispatch(setShowFilter(true))}><VscSettings /></div>

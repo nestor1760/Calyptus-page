@@ -6,6 +6,7 @@ import Sort from '../../../UI/Select/Sort'
 import { useSortedProducts } from '../../../hooks/useSort'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSelectedSort } from '../../../store/sortReducer/sortReducer'
+import HeaderPageNavigation from '../../HeaderPageNavigation/HeaderPageNavigation'
 
 const WishList = () => {
   const navigate = useNavigate()
@@ -23,12 +24,13 @@ const WishList = () => {
       <div className={style.wishListContainer}>
         <div className={style.wishListContent}>
           <div className={style.wishListHeader}>
-              <div className={style.headerNavidation}>
-                <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/')}>Home</button>
-                <p style={{margin: '0 5px'}}>/</p>
-                <button style={{color: 'rgba(0, 0, 0, 0.67)', fontWeight: '600'}}>Wish List</button>
-              </div>
-              <p className={style.wishListTitle}>Wish List</p>
+              <HeaderPageNavigation 
+                links={[
+                  {id: 1, name: 'Home', path: '/'},
+                ]}
+                activeLink='Contacts'
+                title='Wish List'
+              />
           </div>
           {
             (wishList.length > 0)

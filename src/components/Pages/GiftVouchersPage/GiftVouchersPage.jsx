@@ -1,24 +1,23 @@
 import React from 'react';
 import style from './GiftVouchers.module.css';
-import { useNavigate } from 'react-router-dom';
 import { vouchersData } from './vouchersData';
 import VoucherItem from './VouchersItem/VouchersItem';
+import HeaderPageNavigation from '../../HeaderPageNavigation/HeaderPageNavigation';
 
 const GiftVouchersPage = () => {
-  const navigate = useNavigate()
 
   return (
     <div className={style.vouchersContainer}>
       <div className={style.vouchersContent}>
         <div className={style.vouchersHeader}>
-            <div className={style.headerNavidation}>
-              <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/')}>Home</button>
-              <p style={{margin: '0 5px'}}>/</p>
-              <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/catalog_categories')}>catalog categories</button>
-              <p style={{margin: '0 5px'}}>/</p>
-              <button style={{color: 'rgba(0, 0, 0, 0.67)', fontWeight: '600'}}>Gift Vouchers</button>
-            </div>
-            <p className={style.vouchersTitle}>Gift Vouchers</p>
+            <HeaderPageNavigation 
+              links={[
+                {id: 1, name: 'Home', path: '/'},
+                {id: 2, name: 'catalog categories', path: '/catalog_categories'},
+              ]}
+              activeLink='Gift Vouchers'
+              title='Gift Vouchers'
+            />
         </div>
         <div className={style.vouchersListItem}>
           {vouchersData.map(voucher => 

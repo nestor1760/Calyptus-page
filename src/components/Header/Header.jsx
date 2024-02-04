@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import style from './Header.module.css';
 import HeaderInput from './HeaderInput/HeaderInput';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
@@ -16,6 +16,7 @@ import Modal from '../../UI/Modal/Modal';
 import { setHover } from '../../store/modalReducer/modalReducer';
 import CartModal from '../Pages/PurchasePage/CartModal/CartModal';
 import { setShowFilter } from '../../store/filterReducer/filterReducer';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 const Header = () => {
   const navigate = useNavigate()
@@ -24,26 +25,13 @@ const Header = () => {
   const {cart} = useSelector(state => state.cart)
   const {wishList} = useSelector(state => state.wishList)
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
-  
-  useEffect(() => {
-    if(window.innerWidth < 1110) {
+    if(windowWidth < 1110) {
       dispatch(setHover(false))
     }
   }, [windowWidth])
-
 
   const openModal = () => {
     dispatch(setHover(true));
@@ -107,7 +95,7 @@ const Header = () => {
   }, [wishList, dispatch])
 
   useEffect(() => {
-    if(scroll && window.innerWidth > 1109) {
+    if(scroll && windowWidth > 1109) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
@@ -141,13 +129,13 @@ const Header = () => {
             }
             {cartIcon
               ?
-              (window.innerWidth < 1110)
+              (windowWidth < 1110)
                 ?
                   <button className={`${(cart.length > 0) ? style.headerContentBtnActive : style.headerContentBtn}`} onClick={() => navigate('/purchase')}><PiHandbagFill /></button>
                 :
                   <button className={`${(cart.length > 0) ? style.headerContentBtnActive : style.headerContentBtn}`} onClick={() => dispatch(setHover(false))} onMouseEnter={openModal}><PiHandbagFill /></button>   
               :
-              (window.innerWidth < 1110)
+              (windowWidth < 1110)
                 ?
                   <button className={style.headerContentBtn} onClick={() => navigate('/purchase')}><PiHandbagLight /></button>
                 :

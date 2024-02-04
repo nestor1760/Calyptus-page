@@ -26,18 +26,6 @@
   flex-direction: column;
 }
 
-.headerNavidation {
-  display: flex;
-}
-
-.headerNavidation button{
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-}
-
 .titlesRow {
   width: 100%;
   display: flex;
@@ -50,7 +38,7 @@
   text-transform: uppercase;
   letter-spacing: 2.4px;
   font-weight: 600;
-  margin-top: 45px;
+  margin-top: 0;
 }
 
 .cartTotalTitle {
@@ -58,7 +46,7 @@
   text-transform: uppercase;
   letter-spacing: 2.4px;
   font-weight: 600;
-  margin-top: 45px;
+  margin-top: 0;
   margin-right: 202px;
 }
 
@@ -192,7 +180,7 @@
   .purchaseTitle {
     font-size: 20px;
     letter-spacing: 2px;
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   

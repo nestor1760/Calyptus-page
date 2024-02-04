@@ -38,14 +38,14 @@ const PriceSlider = () => {
         </div>
       </div>
       <Slider
-            className='slider'
-            thumbClassName='example-thumb'
-            trackClassName='example-track'
-            onChange={handleSlider}
-            value={[parseInt(minPrice), parseInt(maxPrice)]}            
-            min={0} 
-            max={3000}
-          />
+        className='slider'
+        thumbClassName='example-thumb'
+        trackClassName='example-track'
+        onChange={handleSlider}
+        value={[parseInt(minPrice), parseInt(maxPrice)]}            
+        min={0} 
+        max={3000}
+      />
     </div>
   )
 }

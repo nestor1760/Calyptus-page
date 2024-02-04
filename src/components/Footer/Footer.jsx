@@ -5,17 +5,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setHoverThanksPage } from '../../store/modalReducer/modalReducer';
 import ThanksForSubscribe from '../Pages/ThanksForSubscribe/ThanksForSubscribe';
 import ModalSubscribe from '../../UI/ModalSubscribe/ModalSubscribe';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 const Footer = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
+  const windowWidth = useWindowWidth();
   const {hoverThanksPage} = useSelector(state => state.modal)
 
   const [email, setEmail] = useState('')
   const [emailDirty, setEmailDirty] = useState(false)
   const [emailCorrect, setEmailCorrect] = useState(false)
   const [emailError, setEmailError] = useState('')
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const blurHandler = (e) => {
     if(e.target.name === 'email') {
@@ -52,18 +54,6 @@ const Footer = () => {
     }
   }, [hoverThanksPage])
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
-
   return (
     <div className={style.footerContainer}>
       <div className={style.footerContent}>
@@ -87,7 +77,7 @@ const Footer = () => {
               onBlur={e => blurHandler(e)}
               type='text'
               name='email'
-              placeholder={window.innerWidth < 1110 
+              placeholder={windowWidth < 1110 
                 ? 
                   'Leave your email for latest fashion news!'
                 :
@@ -117,7 +107,7 @@ const Footer = () => {
                 <div className={style.infoItemAddress}>
                   <div className={style.infoAddressStreet}>Shevchenko Street 36</div>
                   <span>Mon-Sun 10:00 AM - 7:00 PM</span>
-                  {(window.innerWidth < 1110)
+                  {(windowWidth < 1110)
                     ?
                       <div className={style.emailMobileVersoin}>calyptus.shop@gmail.com</div>
                     :
@@ -127,7 +117,7 @@ const Footer = () => {
               </div>
             </div>
             <div className={style.contactBlockInfo_item}>
-              {(window.innerWidth < 1110)
+              {(windowWidth < 1110)
                 ?
                   <div onClick={() => navigate('/contact')} className={style.blockInfoItemTitleNavigation}>Information</div>
                 :
@@ -143,7 +133,7 @@ const Footer = () => {
               </div>
             </div>
             <div className={style.contactBlockInfo_item}>
-              {(window.innerWidth < 1110)
+              {(windowWidth < 1110)
                 ?
                   <div onClick={() => navigate('/contact')} className={style.blockInfoItemTitleNavigation}>Follow Us</div>
                 :
@@ -159,7 +149,7 @@ const Footer = () => {
               </div>
             </div>
             <div className={style.contactBlockInfo_item}>
-            {(window.innerWidth < 1110)
+            {(windowWidth < 1110)
                 ?
                   <div onClick={() => navigate('/contact')} className={style.blockInfoItemTitleNavigation}>Payment Systems</div>
                 :

@@ -26,32 +26,13 @@
   flex-direction: column;
 }
 
-.headerNavidation {
-  display: flex;
-}
-
-.headerNavidation button{
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-}
-
-.vouchersTitle {
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 2.4px;
-  font-weight: 600;
-  margin: 45px 0;
-}
-
 /* Item list */
 .vouchersListItem {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 45px;
 }
 
 @media screen and (max-width: 1109px) {
@@ -64,13 +45,6 @@
     margin: 20px 0 0 0;
   }
 
-  /* Header styles */
-  .vouchersTitle {
-    font-size: 20px;
-    letter-spacing: 2px;
-    margin: 20px 0;
-  }
-
   /* Item list */
   .vouchersListItem {
     width: 345px;
@@ -78,5 +52,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 20px;
   }
 }

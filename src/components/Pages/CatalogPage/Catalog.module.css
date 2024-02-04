@@ -19,14 +19,13 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .headerBlog {
-  width: 826px;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   margin-bottom: 95px;
 }
@@ -42,18 +41,6 @@
 .blogText {
   font-size: 16px;
   font-weight: 400;
-}
-
-.headerNavidation {
-  display: flex;
-}
-
-.headerNavidation button{
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
 }
 
 .catalogMainContent {

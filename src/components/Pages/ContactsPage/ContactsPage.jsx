@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import style from './Contacts.module.css';
-import { useNavigate } from 'react-router-dom';
 import GoogleMap from './GoogleMap';
 import { useDispatch, useSelector } from 'react-redux';
 import { setHoverContacts } from '../../../store/modalReducer/modalReducer';
 import ModalContacts from '../../../UI/ModalContacts/ModalContacts';
 import ConsultationDone from '../ConsultationDonePage/ConsultationDone';
+import { useWindowWidth } from '../../../hooks/useWindowWidth';
+import HeaderPageNavigation from '../../HeaderPageNavigation/HeaderPageNavigation';
 
 const ContactsPage = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const {hoverContancts} = useSelector(state => state.modal)
 
@@ -25,8 +25,7 @@ const ContactsPage = () => {
   const [emailError, setEmailError] = useState(false)
   
 //state for width screen
-const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+const windowWidth = useWindowWidth();
   
   const blurHandler = (e) => {
     if(e.target.name === 'email') {
@@ -48,18 +47,6 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
       setEmailError(false)
     }
   }
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
 
   useEffect(() => {
     if(hoverContancts) {
@@ -85,13 +72,12 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   return (
     <div className={style.contactsContainer}>
       <div className={style.contactsContent}>
-        <div className={style.contactsHeader}>
-          <div className={style.headerNavidation}>
-            <button style={{color: 'rgba(0, 0, 0, 0.67)'}} onClick={() => navigate('/')}>Home</button>
-            <p style={{margin: '0 5px'}}>/</p>
-            <button style={{color: 'rgba(0, 0, 0, 0.67)', fontWeight: '600'}}>Contacts</button>
-          </div>
-        </div>
+        <HeaderPageNavigation 
+          links={[
+            {id: 1, name: 'Home', path: '/'},
+          ]}
+          activeLink='Contacts'
+        />
         <div className={style.contactsMain}>
             <div className={style.mainContactDetails}>
                 <h2 className={style.mainContactDetails_title}>contacts</h2>
@@ -102,7 +88,7 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
                   <button>Privacy Policy</button>
                   <button>Contacts</button>
                 </div>
-                {(window.innerWidth < 1110)
+                {(windowWidth < 1110)
                   ?
                     <div className={style.contactsMobileVersionBlock}>
                       <div className={style.mainContactDetails_numbers}>
