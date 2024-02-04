@@ -1,0 +1,32 @@
+.activeFilterContainer {
+  min-width: 90px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #B8B3B3;
+  margin: 0 10px 10px 0;
+}
+
+.activeFilterContainer p {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: lowercase;
+  margin: 3px 25px 3px 10px;
+}
+
+.activeFilterContainer button {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  margin-right: 5px;
+  color: gray;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.activeFilterContainer button:hover {
+  color: black;
+}

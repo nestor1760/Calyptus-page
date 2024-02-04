@@ -1,0 +1,82 @@
+/* Page Container styles */
+.vouchersContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6EFEF;
+}
+
+.vouchersContent {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 45px 0 83px 0;
+}
+
+/* Header styles */
+
+.vouchersHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.headerNavidation {
+  display: flex;
+}
+
+.headerNavidation button{
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.vouchersTitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+  margin: 45px 0;
+}
+
+/* Item list */
+.vouchersListItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1109px) {
+  .vouchersContent {
+    width: 345px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+  }
+
+  /* Header styles */
+  .vouchersTitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 20px 0;
+  }
+
+  /* Item list */
+  .vouchersListItem {
+    width: 345px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

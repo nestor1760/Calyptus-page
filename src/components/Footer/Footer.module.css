@@ -1,0 +1,519 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #F6EFEF;
+}
+
+.footerContent {
+  max-width: 1110px;
+  margin: 50px auto 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.footerBlog {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1110px;
+  height: 695px;
+  margin-bottom: 101px;
+  overflow: hidden;
+}
+
+/* Left part */
+
+.footerBlogLeftPart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 497px;
+  height: 695px;
+  margin-right: 65px;
+}
+
+.leftPartImg{
+  width: 282px;
+  height: 383px;
+  margin-bottom: 115px;
+}
+
+.footerBlogLeftPart p{
+  width: 497px;
+  height: 64px;
+  font-weight: 400;
+  font-size: 24px;
+  color: black;
+  margin-bottom: 45px;
+}
+
+.footerBlogLeftPart span {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Rigth part */
+
+.footerBlogRightPart {
+  width: 494px;
+  height: 695px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.imageBlock_image {
+  width: 494px;
+  height: 695px;
+  object-fit: cover;
+}
+
+.rotatedText {
+  font-size: 128px;
+  font-weight: 500;
+  position: absolute;
+  top: 266px;
+  right: -360px;
+  width: 695px;
+  letter-spacing: 18px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  text-transform: uppercase;
+}
+
+/* Input style */
+
+.footerInputRow {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerInputRow input{
+  width: 100%;
+  height: 45px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 12px 10px;
+  background: #F6EFEF;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.incorrectFooterLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 178px;
+  height: 45px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  background: black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.footerLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 178px;
+  height: 45px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background: #000;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  border: 1px solid black;
+  color: black;
+  background: white;
+}
+
+.emailError {
+  margin: 10px 0;
+  color: red;
+  font-size: 16px;
+}
+
+/* Contact block */
+
+.footerContactBlock {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 76px;
+}
+
+.contactBlockInfo {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contactBlockInfo_item {
+  width: 25%;
+  height: 259px;
+}
+
+.calyptusTitle {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 51px;
+}
+
+.calyptusNumber {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.infoItemAddress {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin: 22px 0 30px 0;
+}
+
+.blockInfoItemTitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 51px;
+}
+
+.contactBlockInfo_item p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.informationLink {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.informationLinkItem {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: black;
+  text-wrap: nowrap;
+  transition: 0.3s;
+}
+
+.informationLinkItem:hover{
+  font-weight: 700;
+}
+
+.footerFollowUs {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.footerFollowUs img{
+  width: 31px;
+  height: 30px;
+  margin-right: 18px;
+  object-fit: contain;
+}
+
+.footerFollowUs a{
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #000;
+}
+
+.footerFollowUs a:hover{
+  font-weight: 700;
+}
+
+.contactBlock_footer {
+  width: 1110px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.blockInfoItemTitlePayment {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.footerPayment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footerPayment img{
+  margin-right: 27px;
+}
+
+@media screen and (max-width: 1109px) {
+  .footerContent {
+    width: 343px;
+    height: 100%;
+  }
+
+  .footerBlog {
+    width: 343px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  /* left part */
+
+  .footerBlogLeftPart {
+    display: flex;
+    align-items: center;
+    width: 375px;
+    height: 181px;
+    margin-right: 0px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .leftPartImg{
+    width: 343px;
+    height: 181px;
+    margin-bottom: 40px;
+    object-fit: cover;
+  }
+
+  .footerBlogLeftPart::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 343px;
+    height: 181px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .footerBlogLeftPart p{
+    width: 298px;
+    height: 42px;
+    font-size: 16px;
+    color: #F6EFEF;
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+  }
+  
+  .footerBlogLeftPart span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #F6EFEF;
+    position: absolute;
+    top: 129px;
+    right: 29px;
+    z-index: 2;
+  }
+
+  /* Rigth part */
+  .footerBlogRightPart {
+    width: 345px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+  
+  .imageBlock_image {
+    width: 310px;
+    height: 420px;
+    object-fit: cover;
+  }
+  
+  .rotatedText {
+    font-size: 78px;
+    top: 162px;
+    right: -187px;
+    width: 423px;
+    letter-spacing: 11.7px;
+  }
+
+  /* Input style */
+  .footerInputRow {
+    width: 375px;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  
+  .footerInputRow input{
+    width: 343px;
+    height: 40px;
+    padding: 10px 0px 10px 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .incorrectFooterLink {
+    width: 343px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .footerLink {
+    width: 343px;
+    height: 40px;
+  }
+  
+  .emailError {
+    margin: 5px 15px;
+    font-size: 14px;
+  }
+
+  /* Contact block */
+  .footerContactBlock {
+    width: 375px;
+    margin-top: 0;
+  }
+
+  .contactBlockInfo {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .contactBlockInfo_item {
+    width: 100%;
+    height: 100%;
+  }
+
+  .calyptusTitle {
+    font-size: 20px;
+    letter-spacing: 0.2px;    
+    margin: 0 0 20px 16px;
+  }
+  
+
+  .calyptusNumber:last-child {
+    margin-bottom: 0px;
+  }
+   
+
+  .contactAddressBlock {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 26px 40px 16px;
+  }
+
+  .infoItemAddress {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0px;
+  }
+
+  .infoItemAddress span{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+
+  .infoAddressStreet {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 9px;
+  }
+
+  .emailMobileVersoin {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .blockInfoItemTitleNavigation {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px 0px 20px 16px;
+    cursor: pointer;
+  }
+
+  .blockInfoItemTitleNavigation:hover {
+    text-decoration: underline;
+  }
+
+  .contactBlockInfo_item p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  .informationLink {
+    display: none;
+  }
+
+  .footerFollowUs {
+    display: none;
+  }
+
+  .contactBlock_footer {
+    display: none;
+  }
+
+  .blockInfoItemTitlePayment {
+    font-size: 20px;
+    margin: 0 0 20px 16px;
+    cursor: pointer;
+  }
+
+  .blockInfoItemTitlePayment:hover {
+    text-decoration: underline;
+  }
+
+  .footerPayment {
+    display: none;
+  }
+}

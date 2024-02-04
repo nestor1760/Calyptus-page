@@ -1,0 +1,264 @@
+.catalogContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6EFEF;
+}
+
+.catalogContent {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 45px 0 95px 0;
+}
+
+.catalogHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.headerBlog {
+  width: 826px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 95px;
+}
+
+.blogTitle {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 10%;
+  margin-bottom: 25px;
+}
+
+.blogText {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.headerNavidation {
+  display: flex;
+}
+
+.headerNavidation button{
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.catalogMainContent {
+  width: 1110px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Array of products container styles */
+
+.catalogListOfProducts {
+  width: 824px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Sort container styles */
+
+.sortContainer {
+  width: 1110px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sortBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sortContainer p {
+  width: 69px;
+  height: 21px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-right: 52px;
+}
+
+/* Filter container styles */
+.catalogFilter {
+  width: 259px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.loader {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 30px;
+  animation: animateScale 2s infinite;
+}
+
+@keyframes animateScale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.errorRequest {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 1109px) {
+  .catalogContent {
+    width: 343px;
+    margin: 20px 0 0 0;
+  }
+
+  .catalogHeader {
+    width: 343px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .catalogMainContent {
+    width: 343px;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .headerNavidation {
+    margin-bottom: 40px;
+  }
+
+  .headerBlog {
+    width: 343px;
+    margin-bottom: 16px;
+  }
+  
+  .blogTitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .blogText {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  /* Sort container styles */
+  .sortContainer {
+    width: 343px;
+    height: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .sortContainer p {
+    width: 61px;
+    height: 19px;
+    font-size: 14px;
+    margin-right: 23px;
+  }
+
+  /* Filter container styles */
+  .catalogFilterDefault {
+    display: none;
+  }
+
+  .catalogFilterOpen {
+    width: 343px;
+    height: 1400px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 4;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    overflow: hidden;
+    background: #F6EFEF;
+    border-bottom: 2px solid #242632;
+  }
+
+  .catalogFilterClose {
+    width: 343px;
+    height: 0px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 4;
+    animation-name: slideOut;
+    animation-duration: 0.4s;
+    overflow: hidden;
+    background: #F6EFEF;
+  }
+
+  @keyframes slideIn {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 1400px;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      height: 1400px;
+    }
+    to {
+      height: 0px;
+    }
+  }
+
+  .filterIcon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Array of products container styles */
+  .catalogListOfProducts {
+    width: 343px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+}

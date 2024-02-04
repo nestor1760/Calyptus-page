@@ -1,0 +1,283 @@
+.contactsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6EFEF;
+}
+
+.contactsContent {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 45px 0 95px 0;
+}
+
+/* Styles for header part */
+.contactsHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.headerNavidation {
+  display: flex;
+}
+
+.headerNavidation button{
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+/* Styles for main part */
+.contactsMain {
+  width: 1110px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 45px 0 95px 0;
+}
+
+/* contact details */
+
+.mainContactDetails {
+  width: 283px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mainContactDetails_title {
+  width: 146px;
+  height: 32px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  margin-bottom: 45px;
+}
+
+.mainContactDetails_info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mainContactDetails_info button {
+  border: none;
+  font-size: 16px;
+  background: transparent;
+  color: #615C5C;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.mainContactDetails_numbers {
+  margin-top: 25px;
+}
+
+.mainContactDetails_numbers p {
+  margin-bottom: 10px;
+}
+
+.mainContactDetails_address {
+  margin-top: 35px;
+}
+
+.mainContactDetails_address p{
+  margin-bottom: 10px;
+}
+
+.mainContactDetails_email {
+  margin-top: 20px;
+}
+
+/* styles for location map */
+.contactsMain_locationMap {
+  width: 827px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.locationMap_title {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  margin-bottom: 45px;
+}
+
+.locationMap_mapContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 827px;
+  height: 491px;
+}
+
+/* consultation block styles */
+.consultationContainer {
+  width: 1110px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.consultationTitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  margin-bottom: 45px;
+}
+
+.consultationInputBlock {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.consultationInputBlock input{
+  width: 545px;
+  height: 60px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #F6EFEF;
+  color: #777373;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 20px 0 20px 20px;
+}
+
+.consultationBtn {
+  width: 545px;
+  height: 60px;
+  background: #000;
+  border: none;
+  font-size: 16px;
+  color: #F6EFEF;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.consultationBtn:hover {
+  background: #F6EFEF;
+  border: 1px solid black;
+  color: black;
+}
+
+@media screen and (max-width: 1109px) {
+  .contactsContent {
+    width: 343px;
+    margin: 20px 0 40px 0;
+  }
+
+  /* Styles for main part */
+  .contactsMain {
+    width: 343px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    margin: 40px 0;
+  }
+
+  .mainContactDetails_title {
+    width: 121px;
+    height: 27px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 40px 0 20px 0;
+  }
+
+  .contactsMobileVersionBlock {
+    width: 343px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .addressBlockMobVersion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .mainContactDetails_numbers {
+    margin-top: 20px;
+  }
+
+  .mainContactDetails_numbers p {
+    margin-bottom: 14px;
+  }
+
+  .mainContactDetails_address {
+    margin-top: 20px;
+  }
+  
+  .mainContactDetails_address p{
+    margin-bottom: 9px;
+  }
+
+  .mainContactDetails_address p:last-child{
+    font-size: 12px;
+    margin-bottom: 26px;
+  }
+
+  .mainContactDetails_email {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  /* styles for location map */
+  .contactsMain_locationMap {
+    width: 343px;
+  }
+
+  .locationMap_title {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .locationMap_mapContainer {
+    width: 343px;
+    height: 343px;
+  }
+
+  .consultationContainer {
+    width: 343px;
+  }
+
+  .consultationTitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .consultationInputBlock {
+    width: 343px;
+  }
+
+  .consultationInputBlock input{
+    width: 343px;
+  }
+  
+  .consultationBtn {
+    width: 343px;
+    margin-top: 12px;
+  }
+}

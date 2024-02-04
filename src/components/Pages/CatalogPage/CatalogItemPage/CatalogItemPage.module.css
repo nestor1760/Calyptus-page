@@ -1,0 +1,215 @@
+/* styles for container */
+.itemPageContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #F6EFEF;
+}
+
+.itemPageContent {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 45px 0 95px 0;
+}
+
+/* styles header */
+.itemPageHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.headerNavidation {
+  display: flex;
+  align-items: center;
+}
+
+.navigationLink {
+  color: rgba(0, 0, 0, 0.67);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+/* styles for item page main */
+
+.itemPageMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* styles product info block */
+
+.mainInfoBlock {
+  width: 762px;
+  height: 623px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.infoBlock_Img {
+  width: 420px;
+  height: 441px;
+  margin-right: 29px;
+  object-fit: contain;
+}
+
+.infoBlock_ProductInfo {
+  width: 313px;
+  height: 623px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.productInfo_title{
+  width: 314px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+
+.infoBlock_ProductInfo p{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.infoBlock_ProductInfo span{
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 41px;
+}
+
+.productPrice {
+  font-size: 32px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.32);
+}
+
+.productInfo_btn {
+  width: 313px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 78px;
+}
+
+.buttonBuy{
+  width: 313px;
+  height: 50px;
+  color: #FFFFFF;
+  background: #000;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.buttonBuy:hover {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.60);
+  color: #000;
+}
+
+.buttonToWish{
+  width: 313px;
+  height: 50px;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.60);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonToWish:hover {
+  background: #000;
+  border: none;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 1109px) {
+  .itemPageContent {
+    width: 343px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 20px 0 40px 0;
+  }
+
+  /* styles header */
+  .itemPageHeader {
+    margin-bottom: 40px;
+  }
+
+  /* styles for item page main */
+  .itemPageMain {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  /* styles product info block */
+  .mainInfoBlock {
+    width: 343px;
+    height: 951px;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .infoBlock_Img {
+    width: 343px;
+    height: 400px;
+    margin-right: 0;
+    object-fit: cover;
+    margin-bottom: 40px;
+  }
+  
+  .infoBlock_ProductInfo {
+    width: 343px;
+    height: 100%;
+  }
+
+  .productInfo_title{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .infoBlock_ProductInfo p{
+    margin-bottom: 20px;
+  }
+  
+  .productInfo_btn {
+    width: 343px;
+    margin-top: 40px;
+  }
+  
+  .buttonBuy{
+    width: 343px;
+    height: 50px;
+  }
+
+  .buttonToWish{
+    width: 343px;
+    height: 50px;
+  }
+}

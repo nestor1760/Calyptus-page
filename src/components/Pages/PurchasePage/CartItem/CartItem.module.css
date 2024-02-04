@@ -1,0 +1,175 @@
+.itemContainer {
+  width: 100%;
+  height: 366px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.itemContainerActive {
+  width: 100%;
+  height: 366px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  animation: slideUp 1s forwards;
+}
+
+.itemPhoto {
+  width: 263px;
+  height: 366px;
+  margin-right: 20px;
+}
+
+.itemInfo {
+  width: 407px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+
+.itemModel {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 55px;
+}
+
+.itemModel span{
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.itemPrice {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 55px;
+}
+
+.itemCounter {
+  width: 79px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 77px;
+}
+
+.count {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 12px;
+}
+
+.itemCounter button{
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #898686;
+  cursor: pointer;
+}
+
+.removeBtn {
+  width: 58px;
+  height: 21px;
+  font-size: 16px;
+  font-weight: 400;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.removeBtn:hover {
+  font-weight: 600;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 1109px) {
+  .itemContainer {
+    width: 343px;
+    height: 683px;
+    flex-direction: column;
+  }
+  
+  .itemContainerActive {
+    width: 343px;
+    height: 683px;
+    flex-direction: column;
+  }
+
+  .itemPhoto {
+    width: 343px;
+    height: 457px;
+    margin-right: 0px;
+  }
+  
+  .itemInfo {
+    width: 343px;
+    height: 100%;
+  }
+
+  .itemName {
+    margin: 40px 0 20px 0;
+  }
+  
+  .itemModel {
+    margin-bottom: 40px;
+  }
+
+  .priceAndCounterBlock {
+    width: 100%;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .itemPrice {
+    margin-bottom: 0;
+  }
+  
+  .itemCounter {
+    width: 85px;
+    margin-bottom: 0;
+  }
+
+  .count {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 10px;
+  }
+
+  .itemCounter button{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+
+  .removeBtn {
+    margin-bottom: 0;
+  }
+}

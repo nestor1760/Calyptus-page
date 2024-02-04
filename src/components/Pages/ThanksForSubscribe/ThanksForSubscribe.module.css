@@ -1,0 +1,141 @@
+.thanksContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thanksContent {
+  position: relative;
+  width: 957px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #F6EFEF;
+  overflow: hidden;
+}
+
+.contentPhoto {
+  width: 545px;
+  height: 753px;
+  margin-right: 69px;
+}
+
+.contentBlog {
+  width: 413px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.blogTitle {
+  width: 274px;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.blogText {
+  width: 169px;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 66px;
+}
+
+.blogPhoto {
+  width: 160px;
+  height: 160px;
+  margin-left: 57px;
+}
+
+.blogBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #797676;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 20px;
+  transition: 0.3s;
+}
+
+.blogBtn:hover {
+  color: black;
+}
+
+@media screen and (max-width: 1109px) {
+  .thanksContent {
+    position: relative;
+    width: 375px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .thanksContent::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 375px;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .contentPhoto {
+    width: 375px;
+    height: 80vh;
+    object-fit: cover;
+    margin-right: 0px;
+  }
+
+  .contentBlog {
+    position: absolute;
+    left: 50px;
+    width: 413px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  .blogTitle {
+    text-align: center;
+    height: 64px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #F6EFEF;
+    margin-bottom: 40px;
+  }
+  
+  .blogText {
+    text-align: center;
+    height: 27px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #F6EFEF;
+    margin-bottom: 0;
+    margin-left: 57px;
+  }
+  
+  .blogPhoto {
+    width: 160px;
+    height: 160px;
+    margin: 0 0 40px 57px;
+  }
+  
+  .blogBtn {
+    color: white;
+    z-index: 2;
+  }
+  
+  .blogBtn:hover {
+    color: #797676;
+    z-index: 2;
+  }
+}

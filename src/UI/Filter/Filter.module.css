@@ -1,0 +1,89 @@
+.categoryItem {
+  display: flex;
+}
+
+.categoryTitle {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 35px 0;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 0 25px 15px 0;
+  border: 1px solid black;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"]::after {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  content: '\f00c';
+  display: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: black;
+}
+
+input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+/* Active filter container styles */
+.activeFilterContainer {
+  width: 259px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.activeFilterBtnClearAll {
+  width: 96px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 35px 0;
+}
+
+.activeFilterBtnClearAll button {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  border: none;
+  color: gray;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.activeFilterBtnClearAll button:hover {
+  color: black;
+}
+
+@media screen and (max-width: 1109px) {
+  .activeFilterContainer {
+    width: 343px;
+  }
+
+  .activeFilterBtnClearAll {
+    margin: 20px 0 35px 0;
+  }
+
+  .categoryTitle {
+    margin: 20px 0;
+  }
+}

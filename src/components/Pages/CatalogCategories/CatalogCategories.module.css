@@ -1,0 +1,80 @@
+/* Page Container styles */
+.categoriesContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6EFEF;
+}
+
+.categoriesContent {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 45px 0 83px 0;
+}
+
+/* Header styles */
+
+.categoriesHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.headerNavidation {
+  display: flex;
+}
+
+.headerNavidation button{
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.categoriesTitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+  margin: 45px 0;
+}
+
+/* Category Item Container styles*/
+.categoriesItemContainer {
+  width: 1110px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+}
+
+
+@media screen and (max-width: 1109px) {
+  .categoriesContent {
+    width: 345px;
+    margin: 20px 0 0 0;
+  }
+
+  .categoriesTitle {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+  }
+
+  /* Category Item Container styles*/
+  .categoriesItemContainer {
+    width: 345px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    /* gap: 20px; */
+  }
+}

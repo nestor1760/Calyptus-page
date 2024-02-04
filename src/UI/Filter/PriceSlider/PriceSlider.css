@@ -1,0 +1,130 @@
+.sliderContainer {
+  width: 259px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sliderTitle {
+  width: 145px;
+  height: 21px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 42px;
+}
+
+.valuesContainer {
+  width: 259px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.valuesSeparator {
+  width: 10px;
+  border: 1px solid black;
+  margin: 13px 5px;
+}
+
+.valuesInput {
+  position: relative;
+}
+
+.valuesInput input{
+  width: 121px;
+  height: 27px;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 10px;
+  border: 1px solid #B8B3B3;
+  background: #F6EFEF;
+  text-align: left;
+  appearance: none;
+}
+
+.inputText {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Slider styles */
+
+.slider {
+  width: 259px;
+  height: 1px;
+  margin-top: 35px;
+  background-color: #B8B3B3;
+}
+
+.example-track {
+  height: 1px;
+  background: #B8B3B3;
+  position: relative;
+
+}
+
+.example-track.example-track-0 {
+  background-color: #B8B3B3;
+}
+
+.example-track.example-track-1 {
+  background-color: #000;
+}
+
+.example-track.example-track-3 {
+  background-color: #B8B3B3;
+}
+
+.example-thumb {
+  width: 7px;
+  height: 7px;
+  background: #000;
+  cursor: grab;
+  border-radius: 50%;
+}
+
+.example-thumb.example-thumb-0 {
+  position: absolute;
+  top: -3px;
+}
+
+.example-thumb.example-thumb-1 {
+  position: absolute;
+  top: -3px;
+}
+
+@media screen and (max-width: 1109px) {
+  .slider {
+    width: 343px;
+    height: 1px;
+    margin-top: 35px;
+    background-color: #B8B3B3;
+  }
+
+  .sliderContainer {
+    width: 343px;
+  }
+  
+  .sliderTitle {
+    margin-bottom: 35px;
+  }
+  
+  .valuesContainer {
+    width: 343px;
+    justify-content: flex-start;
+  }
+
+  .valuesInput input{
+    width: 160px;
+  }
+}
+ 

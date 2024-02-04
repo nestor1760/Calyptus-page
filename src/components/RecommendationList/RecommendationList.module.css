@@ -1,0 +1,51 @@
+.recommendationContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6EFEF;
+}
+
+.recommendationContent{
+  width: 1110px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin: 140px 0;
+}
+
+.recommendationTitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+  margin-bottom: 45px;
+}
+
+.recommendationItemList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1109px) {
+  .recommendationContent{
+    width: 343px;
+    flex-direction: column;
+    margin: 40px 0 -60px 0;
+  }
+
+  .recommendationTitle {
+    margin-bottom: 20px;
+  }
+
+  .recommendationItemList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+}

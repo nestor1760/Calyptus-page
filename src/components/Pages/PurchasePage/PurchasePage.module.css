@@ -1,0 +1,255 @@
+/* Page Container styles */
+.purchaseContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6EFEF;
+}
+
+.purchaseContent {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 45px 0 80px 0;
+}
+
+/* Header styles */
+
+.purchaseHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.headerNavidation {
+  display: flex;
+}
+
+.headerNavidation button{
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.titlesRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.purchaseTitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+  margin-top: 45px;
+}
+
+.cartTotalTitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+  margin-top: 45px;
+  margin-right: 202px;
+}
+
+/* cart item styles + scroll style*/
+
+.cartItem {
+  width: 100%;
+  height: 366px;
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cartItem_product {
+  width: 673px;
+  height: 366px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.cartItem_product::-webkit-scrollbar {
+  width: 0px;
+}
+
+.cartItem_product::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.cartItem_product::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 0px;
+  border: 0px none #ffffff;
+}
+
+/* Cart total cost post */
+.cartTotalCost {
+  width: 437px;
+  height: 366px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-left: 1px solid rgba(0, 0, 0, 0.32);
+}
+
+.cartTotalCostLink{
+  width: 404px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #000;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 32px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cartTotalCostLink:hover {
+  color: black;
+  background: #F6EFEF;
+  border: 1px solid black;
+}
+
+.totalCostItem{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalCostItem span{
+  margin-left: 32px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.totalCostItem p{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.totalCostItem input{
+  width: 170px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+  padding:  10px 0 9px 10px;
+  color: #777373;
+  background: #F6EFEF;
+}
+
+.totalCost {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 46px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.totalTitle{
+  font-size: 24px;
+  margin-left: 32px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1109px) {
+  .purchaseContent {
+    width: 343px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+  }
+
+  .purchaseTitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 40px;
+  }
+
+  
+  /* cart item styles + scroll style*/
+  .cartItem {
+    width: 343px;
+    height: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .cartItem_product {
+    width: 343px;
+    height: 683px;
+  }
+
+  /* cart total price block styles */
+
+  .cartTotalTitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 40px 0;
+  }
+  
+  .cartTotalCost {
+    width: 343px;
+    height: 452px;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.32);
+  }
+
+  .cartTotalCostLink{
+    width: 343px;
+    margin-left: 0;
+  }
+
+  .totalCostItem span{
+    margin-left: 0;
+  }
+
+  .totalCostItem input{
+    width: 167px;
+    padding: 10px 20px;
+  }
+
+  .totalTitle{
+    font-size: 24px;
+    margin-left: 0;
+    font-weight: 600;
+  }
+
+  .totalCost {
+    margin-bottom: 30px;
+  }
+}
+
+

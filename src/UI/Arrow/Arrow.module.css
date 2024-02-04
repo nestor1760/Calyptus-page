@@ -1,0 +1,43 @@
+.arrowContainer {
+  width: 55px;
+  position: relative;
+  margin-left: 24px;
+}
+
+.arrow {
+  position: absolute;
+  top: -19px;
+  cursor: pointer;
+  width: 55px;
+}
+.arrow div {
+  position: relative;
+  top: 20px;
+  width: 55px;
+  height: 1px;
+  border-radius: 0 2px 2px 0;
+  background-color: black;
+  left:0;
+}
+.arrow div::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 1px;
+  top: -2px;
+  right: 0px;
+  border-radius: 2px 0 0 2px;
+  background-color: black;
+  transform: rotate(40deg);
+}
+.arrow div::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 1px;
+  top: 2px;
+  right: 0px;
+  border-radius: 2px 0 0 2px;
+  background-color: black;
+  transform: rotate(-40deg);
+}

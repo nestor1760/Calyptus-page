@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+
+// const firebaseConfig = {
+//     apiKey: "AIzaSyBRGMULXiV97IPAtfg6Rypn4OCfC3Gv1Qs",
+//     authDomain: "calyptus-store-eb7ce.firebaseapp.com",
+//     projectId: "calyptus-store-eb7ce",
+//     storageBucket: "calyptus-store-eb7ce.appspot.com",
+//     messagingSenderId: "767761814352",
+//     appId: "1:767761814352:web:a33118912a9bacc3151255",
+//     measurementId: "G-L2KQFSSH3Z"
+//   };
+
+ 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,0 +1,414 @@
+/* Page Container styles */
+.orderPlacementContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6EFEF;
+}
+
+.orderPlacementContent {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 45px 0 83px 0;
+}
+
+/* Header styles */
+
+.orderPlacementHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.headerNavidation {
+  display: flex;
+}
+
+.headerNavidation button{
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+/* check out styles */
+
+.checkOut {
+  width: 1110px;
+  height: 100%;
+  margin: 45px 0 70px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.formInformation {
+  width: 545px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.formItem {
+  width: 545px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 45px;
+}
+
+.formItemTitle {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.formContainer {
+  width: 545px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.formContainer input {
+  width: 545px;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #777373;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 19px 0 20px 20px;
+  margin-bottom: 20px;
+}
+
+.formContainer input:last-child {
+  margin-bottom: 0px;
+}
+
+.selectionForm {
+  width: 545px;
+  height: 60px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 20px 20px;
+  color: #777373;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.selectionForm:last-child {
+  margin-bottom: 0;
+}
+
+.selectionForm option {
+  padding: 8px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+}
+
+/* order item styles */
+.orderDetails {
+  width: 545px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.orderDetailsTitle {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.orderItem {
+  width: 545px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.orderItem_product {
+  width: 545px;
+  height: 366px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.orderItem_product::-webkit-scrollbar {
+  width: 0px;
+}
+
+.orderItem_product::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.orderItem_product::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 0px;
+  border: 0px none #ffffff;
+}
+
+/* order receipt styles*/
+
+.orderReceipt {
+  width: 545px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 45px;
+}
+
+.receiptItem{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.receiptItem span{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.receiptItem p{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.receiptItem input{
+  width: 170px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+  padding:  10px 0 9px 10px;
+  color: #777373;
+  background: #F6EFEF;
+}
+
+.receiptTotalPrice {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.totalPriceTitle{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* receiptForm styles */
+.receiptForm {
+  width: 545px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 45px;
+}
+
+input[type="checkbox"][id="receiptInput"]{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"][id="receiptInput"]::after {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  content: '\f00c';
+  display: none;
+}
+
+input[type="checkbox"][id="receiptInput"]:checked {
+  background-color: black;
+}
+
+input[type="checkbox"][id="receiptInput"]:checked::after {
+  display: block;
+}
+
+.receiptForm p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+/* receipt link */
+
+.orderReceiptLink{
+  width: 545px;
+  height: 50px;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #000;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.orderReceiptLink:hover {
+  color: black;
+  background: #F6EFEF;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 1109px) {
+  .orderPlacementContent {
+    width: 343px;
+    margin: 20px 0 0 0;
+  }
+
+  .orderDetails {
+    width: 343px;
+    height: 100%;
+  }
+  
+  .orderDetailsTitle {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .orderItem {
+    width: 343px;
+    height: 100%;
+  }
+  
+  .orderItem_product {
+    width: 343px;
+    height: 683px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.32);
+  }
+
+  /* check out styles */
+  .checkOut {
+    width: 343px;
+    height: 100%;
+    margin: 40px 0 0 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .formInformation {
+    width: 343px;
+  }
+  
+  .formItem {
+    width: 343px;
+    margin-bottom: 40px;
+  }
+  
+  .formItemTitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .formContainer {
+    width: 343px;
+    height: 100%;
+  }
+  
+  .formContainer input {
+    width: 343px;
+  }
+
+  .selectionForm {
+    width: 343px;
+  }
+
+  /* order receipt styles*/
+  .orderReceipt {
+    width: 343px;
+    margin-top: 0;
+  }
+
+  .cartTotalsTitle {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 40px 0 40px 0;
+  }
+  
+  .receiptItem input{
+    width: 167px;
+    padding:  10px 20px 9px 20px;
+  }
+  
+  .receiptTotalPrice {
+    margin-bottom: 40px;
+  }
+  
+  .receiptForm {
+    width: 343px;
+    height: 24px;
+    margin-bottom: 40px;
+  }
+
+  .receiptForm p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 10px;
+  }
+  
+  /* receipt link */
+  .orderReceiptLink{
+    width: 343px;
+    padding: 15px 0;
+  }
+}
